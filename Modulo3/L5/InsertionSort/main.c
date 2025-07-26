@@ -2,7 +2,6 @@
 #include <stdlib.h>
 #include <stdbool.h>
 
-
 // Funzione per stampare un array
 void stampaArray(int array[], int n) {
     for (int i = 0; i < n; i++) {
@@ -11,8 +10,8 @@ void stampaArray(int array[], int n) {
     printf("\n");
 }
 
-// Funzione che crea una copia ordinata dell'array usando Bubble Sort
-int* bubbleSortCopy(int array[], int n) {
+// Funzione che crea una copia ordinata dell'array usando Insertion Sort
+int* insertionSortCopy(int array[], int n) {
     int* sorted = malloc(n * sizeof(int));
     if (sorted == NULL) {
         printf("Errore di allocazione memoria.\n");
@@ -24,29 +23,29 @@ int* bubbleSortCopy(int array[], int n) {
         sorted[i] = array[i];
     }
 
-    // Ordinamento Bubble Sort
-    bool scambiato;
-    int temp;
-    do {
-        scambiato = false;
-        for (int i = 0; i < n - 1; i++) {
-            if (sorted[i] > sorted[i + 1]) {
-                printf("Scambio %d con %d\n", sorted[i], sorted[i + 1]);
-                temp = sorted[i];
-                sorted[i] = sorted[i + 1];
-                sorted[i + 1] = temp;
-                scambiato = true;
-            }
+    // Ordinamento Insertion Sort
+    for (int i = 1; i < n; i++) {
+        int chiave = sorted[i];
+        int j = i - 1;
+
+        printf("Confronto %d con la chiave %d\n", sorted[j], chiave);   
+        // Sposta gli elementi maggiori di chiave a destra
+        while (j >= 0 && sorted[j] > chiave) {
+            printf("   Elementi spostati a destra per accomodare il nuovo elemento %d con la chiave %d\n", sorted[j], sorted[j + 1]);   
+            sorted[j + 1] = sorted[j];
+            j--;
         }
+             
+        sorted[j + 1] = chiave;
+
         printf("Array attuale: ");
         stampaArray(sorted, n);
         printf("Premi invio per continuare...");
         getchar();
-    } while (scambiato);
+    }
 
     return sorted;
 }
-
 
 // Funzione main con esempio
 int main() {
@@ -56,9 +55,9 @@ int main() {
     printf("Array originale: ");
     stampaArray(array, n);
 
-    int* ordinato = bubbleSortCopy(array, n);
+    int* ordinato = insertionSortCopy(array, n);
     if (ordinato != NULL) {
-        printf("Array ordinato:  ");
+        printf("Array ordinato (insertion sort): ");
         stampaArray(ordinato, n);
         free(ordinato);
     }
