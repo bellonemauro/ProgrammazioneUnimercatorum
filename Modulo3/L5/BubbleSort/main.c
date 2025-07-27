@@ -1,7 +1,16 @@
+/*  +---------------------------------------------------------------------------+
+ *  |                                                                           |
+ *  |  Corso di Programmazione                                                  |
+ *  |  Tutorial : Bubble Sort                                                   |
+ *  |                                                                           |
+ *  |  Autore: Mauro Bellone, https://www.maurobellone.com                      |
+ *  |  Released under BDS License                                               |
+ *  |                                                                           |
+ *  +---------------------------------------------------------------------------+ */
+ 
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
-
 
 // Funzione per stampare un array
 void stampaArray(int array[], int n) {
@@ -11,18 +20,24 @@ void stampaArray(int array[], int n) {
     printf("\n");
 }
 
-// Funzione che crea una copia ordinata dell'array usando Bubble Sort
-int* bubbleSortCopy(int array[], int n) {
-    int* sorted = malloc(n * sizeof(int));
-    if (sorted == NULL) {
+int* allocaCopia(int array[], int n)
+{
+    int* copiaArray = malloc(n * sizeof(int));
+    if (copiaArray == NULL) {
         printf("Errore di allocazione memoria.\n");
         return NULL;
     }
 
     // Copia dell'array originale
     for (int i = 0; i < n; i++) {
-        sorted[i] = array[i];
+        copiaArray[i] = array[i];
     }
+    return copiaArray;
+}
+
+// Funzione che crea una copia ordinata dell'array usando Bubble Sort
+int* bubbleSort(int array[], int n) {
+    int* sorted = allocaCopia(array, n);
 
     // Ordinamento Bubble Sort
     bool scambiato;
@@ -56,7 +71,7 @@ int main() {
     printf("Array originale: ");
     stampaArray(array, n);
 
-    int* ordinato = bubbleSortCopy(array, n);
+    int* ordinato = bubbleSort(array, n);
     if (ordinato != NULL) {
         printf("Array ordinato:  ");
         stampaArray(ordinato, n);

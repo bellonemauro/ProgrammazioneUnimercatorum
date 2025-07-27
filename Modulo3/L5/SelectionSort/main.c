@@ -1,19 +1,46 @@
+/*  +---------------------------------------------------------------------------+
+ *  |                                                                           |
+ *  |  Corso di Programmazione                                                  |
+ *  |  Tutorial : Selection Sort                                                |
+ *  |                                                                           |
+ *  |  Autore: Mauro Bellone, https://www.maurobellone.com                      |
+ *  |  Released under BDS License                                               |
+ *  |                                                                           |
+ *  +---------------------------------------------------------------------------+ */
+ 
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdbool.h>
 
-int* selectionSortCopy(int array[], int n) {
-    int* sorted = malloc(n * sizeof(int));
-    if (sorted == NULL) {
+// Funzione per stampare un array
+void stampaArray(int array[], int n) {
+    for (int i = 0; i < n; i++) {
+        printf("%d ", array[i]);
+    }
+    printf("\n");
+}
+
+int* allocaCopia(int array[], int n)
+{
+    int* copiaArray = malloc(n * sizeof(int));
+    if (copiaArray == NULL) {
         printf("Errore di allocazione memoria.\n");
         return NULL;
     }
 
     // Copia dell'array originale
     for (int i = 0; i < n; i++) {
-        sorted[i] = array[i];
+        copiaArray[i] = array[i];
     }
+    return copiaArray;
+}
 
-    // Algoritmo Selection Sort
+
+// Funzione che crea una copia ordinata dell'array usando Selection Sort
+int* selectionSort(int array[], int n) {
+    int* sorted = allocaCopia(array, n);
+
+	 // Algoritmo Selection Sort
     int i, j, minIndex, temp;
     for (i = 0; i < n - 1; i++) {
         minIndex = i;
@@ -26,30 +53,29 @@ int* selectionSortCopy(int array[], int n) {
         temp = sorted[i];
         sorted[i] = sorted[minIndex];
         sorted[minIndex] = temp;
-        printf("Scambio %d con %d\n", sorted[i], sorted[minIndex]);
+		printf("Scambio %d con %d\n", sorted[i], sorted[minIndex]);
         printf("Array attuale: ");
         for (int i = 0; i < n; i++) printf("%d ", sorted[i]);
         printf("\n");
         printf("Premi invio per continuare...");
         getchar();
     }
-
-    return sorted;
+	
+	return sorted;
 }
 
+// Funzione main con esempio
 int main() {
     int array[] = {5, 3, 8, 4, 2};
     int n = sizeof(array) / sizeof(array[0]);
 
     printf("Array originale: ");
-    for (int i = 0; i < n; i++) printf("%d ", array[i]);
-    printf("\n");
+    stampaArray(array, n);
 
-    int* ordinato = selectionSortCopy(array, n);
+    int* ordinato = selectionSort(array, n);
     if (ordinato != NULL) {
-        printf("Array ordinato:  ");
-        for (int i = 0; i < n; i++) printf("%d ", ordinato[i]);
-        printf("\n");
+        printf("Array ordinato (insertion sort): ");
+        stampaArray(ordinato, n);
         free(ordinato);
     }
 

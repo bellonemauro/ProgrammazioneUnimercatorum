@@ -1,4 +1,14 @@
-#include <stdio.h>
+/*  +---------------------------------------------------------------------------+
+ *  |                                                                           |
+ *  |  Corso di Programmazione                                                  |
+ *  |  Tutorial : Insertion Sort                                                |
+ *  |                                                                           |
+ *  |  Autore: Mauro Bellone, https://www.maurobellone.com                      |
+ *  |  Released under BDS License                                               |
+ *  |                                                                           |
+ *  +---------------------------------------------------------------------------+ */
+ 
+ #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
 
@@ -10,18 +20,24 @@ void stampaArray(int array[], int n) {
     printf("\n");
 }
 
-// Funzione che crea una copia ordinata dell'array usando Insertion Sort
-int* insertionSortCopy(int array[], int n) {
-    int* sorted = malloc(n * sizeof(int));
-    if (sorted == NULL) {
+int* allocaCopia(int array[], int n)
+{
+    int* copiaArray = malloc(n * sizeof(int));
+    if (copiaArray == NULL) {
         printf("Errore di allocazione memoria.\n");
         return NULL;
     }
 
     // Copia dell'array originale
     for (int i = 0; i < n; i++) {
-        sorted[i] = array[i];
+        copiaArray[i] = array[i];
     }
+    return copiaArray;
+}
+
+// Funzione che crea una copia ordinata dell'array usando Insertion Sort
+int* insertionSort(int array[], int n) {
+    int* sorted = allocaCopia(array, n);
 
     // Ordinamento Insertion Sort
     for (int i = 1; i < n; i++) {
@@ -55,7 +71,7 @@ int main() {
     printf("Array originale: ");
     stampaArray(array, n);
 
-    int* ordinato = insertionSortCopy(array, n);
+    int* ordinato = insertionSort(array, n);
     if (ordinato != NULL) {
         printf("Array ordinato (insertion sort): ");
         stampaArray(ordinato, n);
