@@ -8,7 +8,7 @@
  *  |                                                                           |
  *  +---------------------------------------------------------------------------+ */
  
- #include <stdio.h>
+#include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
 
@@ -47,7 +47,7 @@ int* insertionSort(int array[], int n) {
         printf("Confronto %d con la chiave %d\n", sorted[j], chiave);   
         // Sposta gli elementi maggiori di chiave a destra
         while (j >= 0 && sorted[j] > chiave) {
-            printf("   Elementi spostati a destra per accomodare il nuovo elemento %d con la chiave %d\n", sorted[j], sorted[j + 1]);   
+            printf(" Inserimento %d -> shift a destra %d\n", sorted[j + 1], sorted[j] );   
             sorted[j + 1] = sorted[j];
             j--;
         }
