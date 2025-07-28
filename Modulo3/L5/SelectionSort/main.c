@@ -36,7 +36,7 @@ int* allocaCopia(int array[], int n)
 }
 
 
-// Funzione che crea una copia ordinata dell'array usando Selection Sort
+// Funzione di ordinamento tramite Selection Sort
 int* selectionSort(int array[], int n) {
     int* sorted = allocaCopia(array, n);
 
@@ -55,8 +55,7 @@ int* selectionSort(int array[], int n) {
         sorted[minIndex] = temp;
 		printf("Scambio %d con %d\n", sorted[i], sorted[minIndex]);
         printf("Array attuale: ");
-        for (int i = 0; i < n; i++) printf("%d ", sorted[i]);
-        printf("\n");
+        stampaArray(sorted, n);
         printf("Premi invio per continuare...");
         getchar();
     }

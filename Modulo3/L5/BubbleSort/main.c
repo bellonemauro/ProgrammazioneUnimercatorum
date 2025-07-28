@@ -35,7 +35,7 @@ int* allocaCopia(int array[], int n)
     return copiaArray;
 }
 
-// Funzione che crea una copia ordinata dell'array usando Bubble Sort
+// Funzione di ordinamento Bubble Sort
 int* bubbleSort(int array[], int n) {
     int* sorted = allocaCopia(array, n);
 
