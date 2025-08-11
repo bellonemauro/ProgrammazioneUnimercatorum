@@ -8,6 +8,7 @@
  *  |                                                                           |
  *  +---------------------------------------------------------------------------+ */
  
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
@@ -153,6 +154,23 @@ void bfs(Graph* graph, int startVertex) {
     printf("\n");
 }
 
+
+void dfs(Graph* graph, int vertex) {
+    graph->visited[vertex] = true;
+    printf("Visito nodo %c\n", 'A' + vertex);
+
+    Node* temp = graph->adjLists[vertex];
+    while (temp) {
+        int adjVertex = temp->vertex;
+        if (!graph->visited[adjVertex]) {
+            printf("  Vado in profondità verso nodo %c\n", 'A' + adjVertex);
+            dfs(graph, adjVertex);
+        }
+        temp = temp->next;
+    }
+}
+
+
 int main() {
     Graph* graph = createGraph(MAX_VERTICES);
 
@@ -165,6 +183,15 @@ int main() {
     printGraphAsTreeDyn(graph);
     printGraphAsTreeStatic();
     bfs(graph, 0); // Partenza da A
-
+    
+	// Reset dei nodi visitati
+    for (int i = 0; i < MAX_VERTICES; i++) {
+        graph->visited[i] = false;
+    }
+	
+    printf("\n\n Visita in profondità (DFS):\n");
+    
+    dfs(graph, 0); // Partenza da A
+    
     return 0;
 }
