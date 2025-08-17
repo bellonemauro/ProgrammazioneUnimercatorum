@@ -15,6 +15,7 @@ L'applicazione simula un giocatore che si muove in uno spazio bidimensionale, co
 
 Assicurati di avere installato CMake (versione ≥ 3.10) e un compilatore C++ compatibile con C++17.
 
+
 ### Passaggi:
 
 ```bash
