@@ -36,11 +36,11 @@ main.exe
 
 Il programma ti permette di controllare il giocatore con i tasti:
 
-W: su
-A: sinistra
-S: giù
-D: destra
-Q: esci
+- W: su
+- A: sinistra
+- S: giù
+- D: destra
+- Q: esci
 
 La posizione del giocatore viene aggiornata e mostrata ad ogni input.
 
