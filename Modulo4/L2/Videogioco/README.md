@@ -18,7 +18,12 @@ Assicurati di avere installato CMake (versione ≥ 3.10) e un compilatore C++ co
 
 ### Passaggi:
 
-
+```bash
+mkdir build
+cd build
+cmake ..
+make 
+```
 
 L'eseguibile verrà generato nella cartella build/ con il nome main.
 
@@ -26,7 +31,8 @@ L'eseguibile verrà generato nella cartella build/ con il nome main.
 Una volta compilato, puoi eseguire il programma con:
 
 ```bash
-main.exe```
+main.exe
+```
 
 Il programma ti permette di controllare il giocatore con i tasti:
 
