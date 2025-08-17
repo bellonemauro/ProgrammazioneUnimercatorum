@@ -18,11 +18,7 @@ Assicurati di avere installato CMake (versione ≥ 3.10) e un compilatore C++ co
 
 ### Passaggi:
 
-```bash
-mkdir build
-cd build
-cmake ..
-make```
+
 
 L'eseguibile verrà generato nella cartella build/ con il nome main.
 
