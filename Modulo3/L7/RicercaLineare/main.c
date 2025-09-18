@@ -20,6 +20,21 @@
 #include <stdio.h>
 
 /**
+ * @brief Funzione di stampa dall'array.
+ *
+ * Stampa iterativa con ciclo for su tutti gli elementi.
+ *
+ * @param array Array ordinato di interi.
+ * @param n Numero di elementi nell'array.
+ */
+void stampaArray(int array[], int n) {
+    for (int i = 0; i < n; i++) {
+        printf("%d ", array[i]);
+    }
+    printf("\n");
+}
+
+/**
  * @brief Cerca un elemento in un array usando la ricerca lineare.
  *
  * Scorre l'array elemento per elemento confrontando ciascun valore con quello cercato.
@@ -32,6 +47,8 @@
 int ricerca_lineare(int arr[], int size, int target) {
     for (int i = 0; i < size; i++) {
         printf("Confronto elemento %d con il target %d \n",arr[i], target);
+		printf("Premi invio per continuare...");
+        getchar();
         if (arr[i] == target) {
             return i;
         }
@@ -43,11 +60,17 @@ int main() {
     int dati[] = {3, 7, 1, 9, 5};
     int n = sizeof(dati) / sizeof(dati[0]);
     int valore = 9;
+	
+	printf("Array iniziale = " );
+    stampaArray(dati, n);
+    printf("Cerco il numero  %d. \n", valore);
+    printf("Premi invio per continuare...");
+    getchar();
 
     int risultato = ricerca_lineare(dati, n, valore);
 
     if (risultato != -1) {
-        printf("Elemento trovato all'indice %d\\n", risultato);
+        printf("Elemento trovato all'indice %d \n", risultato);
     } else {
         printf("Elemento non trovato\\n");
     }
