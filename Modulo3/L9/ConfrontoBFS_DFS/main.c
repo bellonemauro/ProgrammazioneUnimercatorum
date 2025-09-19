@@ -1,14 +1,13 @@
 /*  +---------------------------------------------------------------------------+
  *  |                                                                           |
  *  |  Corso di Programmazione                                                  |
- *  |  Tutorial : Esempio BFS                                                   |
+ *  |  Tutorial : Esempio Confronto BFS  - DFS                                  |
  *  |                                                                           |
  *  |  Autore: Mauro Bellone, https://www.maurobellone.com                      |
  *  |  Released under BDS License                                               |
  *  |                                                                           |
  *  +---------------------------------------------------------------------------+ */
  
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
@@ -100,7 +99,7 @@ void printGraph(Graph* graph) {
 
 
 void printGraphAsTreeDyn(Graph* graph) {
-    printf("Struttura del grafo (vista ad albero da A):\n");
+    printf("Struttura del grafo (vista connessioni sui nodi):\n");
 
     for (int i = 0; i < graph->numVertices; i++) {
         printf("%c\n", 'A' + i);
@@ -132,7 +131,7 @@ void bfs(Graph* graph, int startVertex) {
     graph->visited[startVertex] = true;
     enqueue(q, startVertex);
 
-    printf("Visita in ampiezza (BFS):\n");
+    
 
     while (!isEmpty(q)) {
         int currentVertex = dequeue(q);
@@ -180,10 +179,15 @@ int main() {
     addEdge(graph, 2, 4); // C-E
 
     printGraph(graph);
+    getchar();
     printGraphAsTreeDyn(graph);
+    getchar();
     printGraphAsTreeStatic();
-    bfs(graph, 0); // Partenza da A
+    getchar();
     
+    printf("Visita in ampiezza (BFS):\n");
+    bfs(graph, 0); // Partenza da A
+    getchar();
 	// Reset dei nodi visitati
     for (int i = 0; i < MAX_VERTICES; i++) {
         graph->visited[i] = false;
@@ -195,3 +199,4 @@ int main() {
     
     return 0;
 }
+
