@@ -49,16 +49,19 @@ public:
 };
 
 
-
-
 int main() {
     std::vector<std::unique_ptr<Entita>> scena;
     scena.push_back(std::make_unique<Giocatore>("Mauro", 1.f, 2.f));
     scena.push_back(std::make_unique<Automobile>("Panda", -3.f, 0.5f));
+    
+    std::cout << "Demo dynamic dispatch:" << std::endl;
+    std::cin.get();
 
     for (auto& e : scena) {
         e->visualizza();    // dynamic dispatch: chiama la versione corretta
         e->muovi(0.5f, 0.0f);
+        std::cout << "Premi invio per continuare" << std::endl;
+        std::cin.get();
     }
 }
 
