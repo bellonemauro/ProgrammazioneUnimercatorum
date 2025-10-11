@@ -1,4 +1,14 @@
-#include <stdio.h>
+/*  +---------------------------------------------------------------------------+
+ *  |                                                                           |
+ *  |  Corso di Programmazione                                                  |
+ *  |  Tutorial : Esempio definizione di una lista collegata in c               |
+ *  |                                                                           |
+ *  |  Autore: Mauro Bellone, https://www.maurobellone.com                      |
+ *  |  Released under BDS License                                               |
+ *  |                                                                           |
+ *  +---------------------------------------------------------------------------+ */
+
+ #include <stdio.h>
 #include <stdlib.h>
 
 // Definizione della struttura del nodo con typedef

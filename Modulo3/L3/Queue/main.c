@@ -1,4 +1,13 @@
-// main.c
+/*  +---------------------------------------------------------------------------+
+ *  |                                                                           |
+ *  |  Corso di Programmazione                                                  |
+ *  |  Tutorial : Esempio definizione di una coda in c                          |
+ *  |                                                                           |
+ *  |  Autore: Mauro Bellone, https://www.maurobellone.com                      |
+ *  |  Released under BDS License                                               |
+ *  |                                                                           |
+ *  +---------------------------------------------------------------------------+ */
+  
 #include <stdio.h>
 #include "queue.h"
 
@@ -23,5 +32,3 @@ int main() {
     return 0;
 }
 
-// compilazione 
-// gcc main.c queue.c -o queue_demo

@@ -1,7 +1,7 @@
 /*  +---------------------------------------------------------------------------+
  *  |                                                                           |
  *  |  Corso di Programmazione                                                  |
- *  |  Tutorial : Quick Sort                                                   |
+ *  |  Tutorial : Quick Sort                                                    |
  *  |                                                                           |
  *  |  Autore: Mauro Bellone, https://www.maurobellone.com                      |
  *  |  Released under BDS License                                               |

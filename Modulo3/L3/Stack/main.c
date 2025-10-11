@@ -1,4 +1,13 @@
-// main.c
+/*  +---------------------------------------------------------------------------+
+ *  |                                                                           |
+ *  |  Corso di Programmazione                                                  |
+ *  |  Tutorial : Esempio definizione di uno stack in c                         |
+ *  |                                                                           |
+ *  |  Autore: Mauro Bellone, https://www.maurobellone.com                      |
+ *  |  Released under BDS License                                               |
+ *  |                                                                           |
+ *  +---------------------------------------------------------------------------+ */
+  
 #include <stdio.h>
 #include "stack.h"
 
@@ -23,6 +32,3 @@ int main() {
     return 0;
 }
 
-// compilazione 
-// gcc main.c stack.c -o stack_demo
-// il risultato sarà un file stack_demo.exe

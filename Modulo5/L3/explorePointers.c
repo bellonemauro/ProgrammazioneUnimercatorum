@@ -1,19 +1,23 @@
 /*  +---------------------------------------------------------------------------+
  *  |                                                                           |
  *  |  Corso di Programmazione                                                  |
- *  |  Tutorial : Esempio memory allocation                                     |
+ *  |  Tutorial : Esempio uso e esplorazione dei puntatori                      |
  *  |                                                                           |
  *  |  Autore: Mauro Bellone, https://www.maurobellone.com                      |
  *  |  Released under BDS License                                               |
  *  |                                                                           |
  *  +---------------------------------------------------------------------------+ */
-
+ 
 #include <stdio.h>
 #include <stdlib.h>
 
-int* allocaArrayHeap(const int size) {
+int* inizializzaArray(int* array, const int size) {
     
-    int* array = (int*) malloc(size * sizeof(int));
+    if (array == NULL) {
+        printf("Errore di allocazione, non posso inizializzare l'array.\n");
+        return NULL;
+    }
+    
     // Inizializzazione dell'array con valori di esempio
     for (int i = 0; i < size; ++i) {
         array[i] = i * 2;
@@ -21,15 +25,9 @@ int* allocaArrayHeap(const int size) {
     return array;
 }
 
-void allocaArrayStack(int array[], int size) {
-    for (int i = 0; i < size; ++i) {
-        array[i] = i * 20;
-    }
-}
-
 void stampaArray(const int* array, const int size) {
     for (int i = 0; i < size; ++i) {
-        printf("array[%d] = %d\n", i, array[i]);
+        printf("L'indirizzo %p contiene il valore a %d \n", &array[i], array[i]);
     }
 }
 
@@ -41,25 +39,25 @@ int main() {
         printf("Input non valido.\n");
         return 1;
     }
+    getchar();
     
-    printf("\nAlloco l'array nell'heap.\n");
-    int* array = allocaArrayHeap(N);
+    int* array = malloc(N * sizeof(int));
     if (array == NULL) {
         printf("Errore di allocazione\n");
         return 0;
     }
-    printf("\nArray correttamente allocato nell'heap.\n");
+    printf("Array correttamente allocato all'indirizzo %p.\n", array);
+    printf("Il puntatore all'array è contenuto all'indirizzo %p.\n", &array);
+    printf("Premi invio per continuare...");
+    getchar();
     
-    printf("\nAlloco l'array nello stack.\n");
-    int arrayStack[N]; 
-    allocaArrayStack(arrayStack, N);
-    printf("\nArray correttamente allocato nello stack.\n");
+    if (inizializzaArray(array, N) ==0)    {
+        printf("Errore di iniializzazione\n");
+        return 0;
+    }
     
-    printf("\nStampa array nell'heap.\n");
+    printf("\nArray correttamente inizializzato.\n");
     stampaArray(array, N);
     free(array); // Deallocazione
-    
-    printf("\nStampa array nello stack.\n");
-    stampaArray(arrayStack, N);
-    
 }
+
