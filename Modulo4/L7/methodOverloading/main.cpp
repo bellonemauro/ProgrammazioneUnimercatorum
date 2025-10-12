@@ -1,3 +1,13 @@
+/*  +---------------------------------------------------------------------------+
+ *  |                                                                           |
+ *  |  Corso di Programmazione                                                  |
+ *  |  Tutorial : Method overloading                                            |
+ *  |                                                                           |
+ *  |  Autore: Mauro Bellone, https://www.maurobellone.com                      |
+ *  |  Released under BDS License                                               |
+ *  |                                                                           |
+ *  +---------------------------------------------------------------------------+ */
+ 
 #include <iostream>
 #include <string>
 

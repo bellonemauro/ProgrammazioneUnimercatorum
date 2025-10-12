@@ -1,3 +1,13 @@
+#  +---------------------------------------------------------------------------+
+#  |                                                                           |
+#  |  Corso di Programmazione                                                  |
+#  |  Tutorial : Esempio classe - cmake                                        |
+#  |                                                                           |
+#  |  Autore: Mauro Bellone, https://www.maurobellone.com                      |
+#  |  Released under BDS License                                               |
+#  |                                                                           |
+#  +---------------------------------------------------------------------------+ 
+ 
 cmake_minimum_required(VERSION 3.12)
 project(AutomobileProject LANGUAGES CXX)
 
