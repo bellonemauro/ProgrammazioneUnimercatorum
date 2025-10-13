@@ -1,4 +1,14 @@
-#include <iostream>
+/*  +---------------------------------------------------------------------------+
+ *  |                                                                           |
+ *  |  Corso di Programmazione                                                  |
+ *  |  Tutorial : Esempio allocazione e passaggio immagine RGB per riferimento  |
+ *  |                                                                           |
+ *  |  Autore: Mauro Bellone, https://www.maurobellone.com                      |
+ *  |  Released under BDS License                                               |
+ *  |                                                                           |
+ *  +---------------------------------------------------------------------------+ */
+ 
+ #include <iostream>
 #include <chrono>
 #include <algorithm>
 #include <iomanip>  
@@ -58,9 +68,9 @@ int main() {
         auto endValue = std::chrono::high_resolution_clock::now();
     
         std::cout << std::fixed << std::setprecision(10)
-                  << "Tempo con passaggio per valore (copia): "
+                  << "Tempo con passaggio per valore (copia): \n"
                   << std::chrono::duration<double>(endValue - startValue).count()
-                  << " secondi" << std::endl;
+                  << " secondi \n" << std::endl;
     
         // Misura tempo con passaggio per puntatore (senza copia)
         auto startPointer = std::chrono::high_resolution_clock::now();
@@ -68,7 +78,7 @@ int main() {
         auto endPointer = std::chrono::high_resolution_clock::now();
     
         std::cout << std::fixed << std::setprecision(10)
-                  << "Tempo con passaggio per puntatore: "
+                  << "Tempo con passaggio per puntatore: \n"
                   << std::chrono::duration<double>(endPointer - startPointer).count()
                   << " secondi \n\n" << std::endl;
     
