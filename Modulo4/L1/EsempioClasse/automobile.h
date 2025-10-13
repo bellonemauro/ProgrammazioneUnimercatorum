@@ -1,4 +1,13 @@
-// automobile.h
+/*  +---------------------------------------------------------------------------+
+ *  |                                                                           |
+ *  |  Corso di Programmazione                                                  |
+ *  |  Tutorial : Esempio classe                                                |
+ *  |                                                                           |
+ *  |  Autore: Mauro Bellone, https://www.maurobellone.com                      |
+ *  |  Released under BDS License                                               |
+ *  |                                                                           |
+ *  +---------------------------------------------------------------------------+ */
+ 
 #ifndef AUTOMOBILE_H  // Header guard per evitare inclusioni multiple
 #define AUTOMOBILE_H
 

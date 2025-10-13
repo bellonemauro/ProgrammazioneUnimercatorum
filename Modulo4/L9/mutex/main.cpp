@@ -1,4 +1,14 @@
-#include <iostream>
+/*  +---------------------------------------------------------------------------+
+ *  |                                                                           |
+ *  |  Corso di Programmazione                                                  |
+ *  |  Tutorial : Mutex                                                         |
+ *  |                                                                           |
+ *  |  Autore: Mauro Bellone, https://www.maurobellone.com                      |
+ *  |  Released under BDS License                                               |
+ *  |                                                                           |
+ *  +---------------------------------------------------------------------------+ */
+
+ #include <iostream>
 #include <thread>
 #include <mutex>
 

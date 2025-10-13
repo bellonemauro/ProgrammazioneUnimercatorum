@@ -1,4 +1,13 @@
-// automobile.cpp
+/*  +---------------------------------------------------------------------------+
+ *  |                                                                           |
+ *  |  Corso di Programmazione                                                  |
+ *  |  Tutorial : Esempio classe                                                |
+ *  |                                                                           |
+ *  |  Autore: Mauro Bellone, https://www.maurobellone.com                      |
+ *  |  Released under BDS License                                               |
+ *  |                                                                           |
+ *  +---------------------------------------------------------------------------+ */
+ 
 #include "automobile.h"
 
 // Costruttore

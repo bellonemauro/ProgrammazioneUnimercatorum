@@ -29,4 +29,5 @@ int main() {
     t3.join();
     std::cout << "Counter: " 
               << counter << "\n";
+
 }
